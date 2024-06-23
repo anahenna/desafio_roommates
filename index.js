@@ -21,7 +21,7 @@ app.use('*', (req, res) => {
     res.status(404).json({ok: false, msg: 'ruta no configurada aún 🫥'})
 })
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 5001
 app.listen(PORT, () => {
     console.log(`Servidor andando en http://localhost:${PORT}`)
 })

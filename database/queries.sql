@@ -19,3 +19,4 @@ SELECT * FROM ROOMMATES;
 SELECT * FROM GASTOS;
 
 -- No se entregan seeders ya que los registros de roommates se generan usando la randomuser api 
+-- Y los gastos se pueden generar en la interfaz

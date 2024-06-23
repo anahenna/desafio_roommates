@@ -20,7 +20,7 @@ const agregarGasto = async () => {
         monto: monto,
       };
 
-      const response = await fetch("http://localhost:3000/api/v1/gastos", {
+      const response = await fetch("http://localhost:5001/api/v1/gastos", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -47,7 +47,7 @@ const agregarGasto = async () => {
 
 const getRoommates = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/v1/roommates");
+    const res = await fetch("http://localhost:5001/api/v1/roommates");
     roommates = await res.json();
     console.log(roommates);
   } catch (error) {
@@ -56,7 +56,7 @@ const getRoommates = async () => {
 };
 
 const getGastos = async () => {
-  const res = await fetch("http://localhost:3000/api/v1/gastos");
+  const res = await fetch("http://localhost:5001/api/v1/gastos");
   gastos = await res.json();
   console.log("Gastos recuperados:", gastos);
 };
@@ -141,7 +141,7 @@ const imprimir = async () => {
 };
 
 const nuevoRoommate = () => {
-  fetch("http://localhost:3000/api/v1/roommates", { method: "POST" })
+  fetch("http://localhost:5001/api/v1/roommates", { method: "POST" })
     .then((res) => res.json())
     .then(() => {
       location.reload();
@@ -149,7 +149,7 @@ const nuevoRoommate = () => {
 };
 
 const deleteGasto = async (id) => {
-  await fetch("http://localhost:3000/api/v1/gastos/" + id, {
+  await fetch("http://localhost:5001/api/v1/gastos/" + id, {
     method: "DELETE",
   });
   location.reload();
@@ -167,7 +167,7 @@ const updateGasto = async () => {
     monto,
   });
 
-  await fetch("http://localhost:3000/gastos/" + gastoEditing, {
+  await fetch("http://localhost:5001/gastos/" + gastoEditing, {
     method: "PUT",
     body: JSON.stringify({
       roommate: roommateSelected,
